@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReconMap Pro - About App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 30px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            backdrop-filter: blur(5px);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #11998e;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,128,128,0.2);
+        }
+        
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            color: #11998e;
+            margin-bottom: 5px;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: #11998e;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-tag:hover {
+            transform: scale(1.05);
+            background: #0a7e6b;
+        }
+        
+        .version-box {
+            background: white;
+            border: 2px solid #11998e;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .version-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #11998e;
+            line-height: 1;
+        }
+        
+        .footer {
+            background: #f1f1f1;
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        .footer a {
+            color: #11998e;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .dev-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .dev-avatar {
+            width: 60px;
+            height: 60px;
+            background: #11998e;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                🗺️
+            </div>
+            <h1>ReconMap Pro</h1>
+            <p>Professional Surveying & Navigation Tool</p>
+            <div class="badge">
+                Version 1.0.0 | Released 2026
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="dev-info">
+                <div class="dev-avatar">
+                    👨‍💻
+                </div>
+                <div>
+                    <h3 style="color: #11998e; margin-bottom: 5px;">Developed by Adil AH</h3>
+                    <p style="color: #666;">📧 sarasami19942@gmail.com</p>
+                    <p style="color: #666;">Independent Developer</p>
+                </div>
+            </div>
+            
+            <div class="version-box">
+                <div class="version-number">1.0.0</div>
+                <p style="color: #666;">Current Version | February 2026</p>
+                <p style="margin-top: 10px;">✨ First public release</p>
+            </div>
+            
+            <div class="section">
+                <h2>🎯 About The App</h2>
+                <p>ReconMap Pro is a powerful surveying, navigation, and mapping application designed for professionals in military, surveying, engineering, and outdoor activities. It combines advanced GPS capabilities with precise calculations and multiple coordinate systems.</p>
+            </div>
+            
+            <div class="section">
+                <h2>⭐ Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🗺️</div>
+                        <div class="feature-title">12+ Map Types</div>
+                        <div style="font-size: 0.8em;">OSM, Topo, Satellite, Dark, Marine</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <div class="feature-title">GPS Positioning</div>
+                        <div style="font-size: 0.8em;">Real-time location with accuracy</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧭</div>
+                        <div class="feature-title">Bearing & Azimuth</div>
+                        <div style="font-size: 0.8em;">Degrees, Grads, Mils (6400)</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📏</div>
+                        <div class="feature-title">Distance & Area</div>
+                        <div style="font-size: 0.8em;">Lines, polygons, perimeters</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <div class="feature-title">Multiple Formats</div>
+                        <div style="font-size: 0.8em;">DMS, Decimal, UTM, MGRS</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📐</div>
+                        <div class="feature-title">Topo Calculations</div>
+                        <div style="font-size: 0.8em;">Slope, compactness, centroid</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <div class="feature-title">Save Locations</div>
+                        <div style="font-size: 0.8em;">Local database with all data</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <div class="feature-title">Location Search</div>
+                        <div style="font-size: 0.8em;">Nominatim integration</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🛠️ Technology Stack</h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Android</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">OSMDroid</span>
+                    <span class="tech-tag">OpenStreetMap</span>
+                    <span class="tech-tag">Material Design</span>
+                    <span class="tech-tag">GPS/GNSS</span>
+                    <span class="tech-tag">UTM/MGRS</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">Nominatim</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📊 Supported Calculations</h2>
+                <ul>
+                    <li><strong>Distance:</strong> Haversine formula (meters/kilometers)</li>
+                    <li><strong>Bearing:</strong> 0-360° from North</li>
+                    <li><strong>Azimuth:</strong> Degrees, Grads (400), Mils (6400)</li>
+                    <li><strong>Gisement:</strong> With meridian convergence</li>
+                    <li><strong>Area:</strong> Planimetric, geodetic, spherical</li>
+                    <li><strong>Perimeter:</strong> Polygon perimeter</li>
+                    <li><strong>Slope:</strong> Percentage and degrees</li>
+                    <li><strong>Compactness:</strong> 4πA/P²</li>
+                    <li><strong>Centroid:</strong> Polygon centroid</li>
+                    <li><strong>Bounding Box:</strong> Min/max coordinates</li>
+                    <li><strong>Ellipse parameters:</strong> Major/minor axis</li>
+                    <li><strong>Fractal dimension:</strong> Shape complexity</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>📱 Map Types Included</h2>
+                <ul>
+                    <li>🗺️ OpenStreetMap Standard</li>
+                    <li>🏔️ OpenTopoMap (Topographic)</li>
+                    <li>🌫️ OpenTopoMap Gray</li>
+                    <li>🛰️ ESRI Satellite</li>
+                    <li>🌍 Stamen Terrain</li>
+                    <li>🚴 CyclOSM (Cycling)</li>
+                    <li>🚗 OSM Transport</li>
+                    <li>🏛️ Humanitarian Map</li>
+                    <li>🌃 Dark Map</li>
+                    <li>🏞️ Landscape Map</li>
+                    <li>🗾 OpenSeaMap (Marine)</li>
+                    <li>🚶 Outdoor Map</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>📝 Open Source Acknowledgments</h2>
+                <p>ReconMap Pro uses these amazing open source libraries:</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>OSMDroid</strong> - Map viewing (Apache 2.0)</li>
+                    <li><strong>OpenStreetMap</strong> - Map data (ODbL)</li>
+                    <li><strong>Material Components</strong> - UI (Apache 2.0)</li>
+                    <li><strong>Nominatim</strong> - Location search</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>📞 Contact Developer</h2>
+                <p>For support, questions, or feedback:</p>
+                <p style="margin-top: 10px; background: #11998e; color: white; padding: 10px; border-radius: 5px; display: inline-block;">
+                    📧 sarasami19942@gmail.com
+                </p>
+                <p style="margin-top: 10px;">Developer: Adil AH</p>
+                <p style="margin-top: 5px; color: #666;">Available for freelance Android development</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 Adil AH. All rights reserved.</p>
+            <p><a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_of_use.html">Terms of Use</a></p>
+            <p style="margin-top: 10px;">Made with ❤️ for the surveying community</p>
+        </div>
+    </div>
+</body>
+</html>
